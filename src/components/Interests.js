@@ -1,13 +1,14 @@
-import React from "react";
+import React,{ useContext} from "react";
+import {Theme} from '../context/theme'
 
-function Interests({ interests, theme }) {
+
+function Interests({ interests}) {
+  const {theme} = useContext(Theme)
+
   return (
     <div>
       <h4>Interests</h4>
-      <ul className={theme}>
-        {interests.map((interest) => (
-          <li key={interest}>{interest}</li>
-        ))}
+      <ul className={theme}>{interests.map((interest) => (<li key={interest}>{interest}</li> ))}
       </ul>
     </div>
   );
